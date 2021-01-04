@@ -1,0 +1,192 @@
+
+
+@media screen and (min-width: 1026px)
+
+	.container
+		fill blue
+
+
+
+@media screen and (max-width: 1140px)
+
+	.container
+		max-width 960px
+
+	section.works
+
+		.item
+			height 250px
+			width (100% / 3)
+
+	section.reviews
+
+		.review
+			padding 50px
+
+
+
+@media screen and (max-width: 820px)
+
+	header.main-header
+
+		.container
+			padding-top 20px
+			padding-bottom @padding-top
+
+		button.nav-toggle
+			display block
+			z-index 11
+
+		nav
+			float none
+			display none
+			align-items center
+			flex-direction column
+			justify-content center
+			position fixed
+			z-index 10
+			top 0
+			left 0
+			right 0
+			bottom 0
+			text-align center
+			background-color rgba(0,0,0, .7)
+
+			&.show
+				display flex
+
+			a
+				display block
+				margin 0
+				font-size 2em
+
+	section.banner
+
+		h1
+			font-size 3.3em
+
+		p
+			font-size 1em
+
+	section.features
+		padding 50px 0
+
+		.item
+			width (100% / 2)
+
+	section.reviews
+		margin-right 0
+
+		.review
+			left 0
+			background-color rgba(#53354a, .7)
+
+			.slider, .slider-dots
+				max-width 100%
+
+	section.team
+
+		.item
+			width (100% / 2)
+
+
+@media screen and (max-width: 640px)
+
+	.container
+		padding-top 10px
+		padding-bottom @padding-top
+		max-width 100%
+
+	section.banner
+
+		h1
+			font-size 2.1em
+
+		p
+			font-size 1em
+
+	section.works
+
+		.item
+			height 200px
+			width (100% / 2)
+
+	section.team
+		text-align center
+
+		.item
+			width (100% / 2)
+			text-align left
+
+	footer.main-footer
+
+		.container.footer
+			text-align center
+			padding-top 30px
+			padding-bottom @padding-top
+
+			.item
+				width 100%
+				margin-bottom 30px
+
+				&:last-of-type
+					margin-bottom 0
+
+
+
+@media screen and (max-width: 500px)
+
+	section.team, section.download
+		padding-top 30px
+		padding-bottom @padding-top
+
+	section.features
+
+		.item
+			width (100%/1)
+			padding 20px 10px
+
+	section.team
+
+		.item
+			width 100%
+
+	section.reviews
+
+			.review
+
+				.slider
+					margin-bottom 10px
+
+				h3.review-text
+					font-size 1.5em
+
+	section.download
+
+		.head
+			font-size 1.4em
+
+		.sub-head
+			font-size 1em
+
+
+@media screen and (max-width: 400px)
+
+	html, body
+		font-size 14px
+
+	header.main-header
+		nav
+			a
+				font-size 1em
+
+	section.works
+
+		.item
+			height 200px
+			width 100%
+
+	section.reviews
+
+		.review
+			padding 20px 10px

@@ -1,0 +1,390 @@
+@import '_lib'
+@import '_fonts'
+@import '_util'
+@import '_base'
+@import '_animation'
+
+
+body
+	font-family 'RalewayRegular', sans-serif
+	position relative
+	font-size 15px
+	line-height 1.4
+	cursor default
+	color #6c7279
+
+
+header.main-header
+	position absolute
+	top 0
+	left 0
+	width 100%
+
+	&.fixed
+		position fixed
+		background-color #3a3e64
+		z-index 3
+		border-bottom 0
+
+		.container
+			padding-top 26px
+			padding-bottom @padding-top
+
+	.container
+		padding-top 36px
+		padding-bottom @padding-top
+		border-bottom 1px solid rgba(#fff, .3)
+		transition padding .2s
+
+	.logo
+		float left
+
+		a
+			display inline-block
+			color #66697e
+			text-decoration none
+			font-family 'RalewayBlack', sans-serif
+			text-transform uppercase
+			font-size 20px
+
+			span
+				color #fff
+				font-family 'RalewayExtraLight', sans-serif
+
+	nav
+		float right
+		display block
+
+		a
+			display inline-block
+			font-family 'RalewayBold', sans-serif
+			font-size 13px
+			text-decoration none
+			color #fff
+			margin 0 30px
+			opacity .75
+			transition opacity .3s
+			text-transform uppercase
+			padding 5px 0
+
+			&:last-of-type
+				margin-right 0
+
+			&:hover, &.active
+				opacity 1
+
+	button.nav-toggle
+		display none
+		width 28px
+		height @width
+		background-color main-color
+		border-radius 50%
+		border none
+		outline none
+		float right
+		margin 0
+		padding 0
+		position relative
+		cursor pointer
+		z-index 1
+		overflow hidden
+		color none
+		font-size 0
+		appearance none
+		box-shadow none
+
+		&.active span
+			background none
+
+		&.active span::before
+			top 0
+			transform rotate(45deg)
+
+		&.active span::after
+			bottom 0
+			transform rotate(-45deg)
+
+		&.active span::before, &.active span::after
+			transition-delay 0, 0.3s
+
+		span
+			border-radius 20%
+			top 50%
+			transform translateY(-1px)
+			left 7px
+			right @left
+
+			&, &::before, &::after
+				display block
+				position absolute
+				background-color #fff
+				height 2px
+
+			&::before, &::after
+				content ""
+				left 0
+				right 0
+				border-radius 20%
+				transition-duration 0.3s, 0.3s
+				transition-delay 0.3s, 0
+				transition-property all, transform
+
+			&::before
+				top -4px
+
+			&::after
+				bottom -4px
+
+
+section.banner
+	background-image url('../img/banner.jpg')
+	background-repeat no-repeat
+	background-size cover
+	color #fff
+	padding-top 220px
+	padding-bottom 100px
+	min-height 480px
+	text-align center
+
+	.container
+		max-width 970px
+
+	h1
+		font-family 'OpenSansBold', sans-serif
+		font-size 4.3em
+		line-height 1.1
+		text-transform uppercase
+		color inherit
+		margin-bottom 28px
+
+	p
+		color inherit
+		font-size 1.46em
+		line-height 1.5
+
+	.button
+		padding-top 3em
+
+
+section.features
+	padding 100px 0
+
+	.container
+		font-size 0
+
+	.item
+		font-size 1rem
+		display inline-block
+		vertical-align top
+		width (100% / 3)
+		padding 20px 30px
+		text-align center
+
+		.picture
+			margin-bottom 30px
+			height 60px
+
+			svg
+				fill main-color
+
+		h3, p
+			font-size .9em
+
+		h3
+			margin-bottom 20px
+			color black
+
+
+section.works
+
+	.container-fill
+		font-size 0
+		text-align center
+
+	.item
+		background-position center center
+		background-size cover
+		width 25%
+		display inline-block
+		vertical-align middle
+		font-size 1rem
+		height 250px
+		text-decoration none
+
+		&:hover
+			.desc
+				opacity 1
+
+		.desc
+			display flex
+			width 100%
+			height 100%
+			background-color rgba(main-color, .8)
+			justify-content center
+			flex-direction column
+			color white
+			text-align center
+			opacity 0
+			transition opacity .3s
+
+
+section.team
+	padding 100px 0 80px
+	text-align center
+
+	.container
+		font-size 0
+
+	.item
+		text-align left
+		font-size 1rem
+		display inline-block
+		vertical-align top
+		padding 20px 15px
+		width (100% / 4)
+
+		.picture, .desc
+			margin-bottom 26px
+
+		.picture
+
+			img
+				display block
+				width 100%
+
+		.head
+			text-transform none
+			color #2d3033
+			font-family 'RalewayLight', sans-serif
+
+		.sub-head
+			color main-color
+			margin-bottom 15px
+			font-size .7em
+			font-family 'RalewayLight', sans-serif
+
+		p
+			font-size .9em
+
+
+section.download
+	padding 80px 0
+	text-align center
+
+	.head, .sub-head
+		color #2d3033
+		margin-bottom 15px
+
+	.head
+		font-family 'RalewayThin', sans-serif
+		font-size 1.9em
+		text-transform capitalize
+
+	.sub-head
+		font-size .9em
+		font-family 'RalewayBold', sans-serif
+
+	.button
+		padding-top 36px
+
+
+section.reviews
+	background-position center center
+	background-repeat no-repeat
+	background-size cover
+	margin-right 50%
+
+	.review
+		padding 80px
+		left 100%
+		position relative
+		background-color #53354a
+
+		.slider, .slider-dots
+			max-width 530px
+
+		.slider
+			color #fff
+			margin-bottom 56px
+			clearfix()
+
+			.item
+				display none
+
+				&.active
+					display block
+					animation fade-in .7s ease forwards
+
+		.slider-dots
+			text-align center
+
+			a
+				display inline-block
+				width 12px
+				height @width
+				border-radius 50%
+				background-color #fff
+				opacity .5
+				transition opacity .3s
+				margin 2px
+
+				&:hover, &.active
+					opacity 1
+
+		h3.review-text
+			font-family 'cardoitalic', sans-serif
+			font-size (36 / 16)em
+			text-transform none
+			margin-bottom 20px
+			letter-spacing .03em
+			font-weight normal
+			line-height 1.2
+
+		h4.review-author
+			font-size .8rem
+
+
+footer.main-footer
+	background-color #3a3e64
+
+	.container.footer
+		padding-top 60px
+		padding-bottom @padding-top
+		font-size 0
+
+		.item
+			font-size 1rem
+			display inline-block
+			width (100% / 3)
+			vertical-align top
+			text-align center
+
+			h3
+				margin-bottom 16px
+
+			h3, p
+				color #fff
+				font-size 1rem
+
+			p
+				opacity .5
+
+	.sub-footer
+		text-align center
+		padding 26px
+		color #808080
+		background-color #313454
+
+		i.fa
+			color main-color
+
+		a
+			text-decoration none
+			color #fff
+
+			&:hover
+				text-decoration underline
+
+
+
+@import '_media'
